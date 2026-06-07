@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html
+    class="dark"
+    lang="en"
+>
+
+<head>
+    <meta charset="utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0"
+        name="viewport"
+    />
+    <title>Proyectos | EduardoCarrasco-Dev.sys</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@600;700&amp;display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .5;
+            }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        .glass-panel:hover {
+            border-color: #06B6D4;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+        }
+
+        /* Custom scrollbar for technical look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #051424;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#271901",
+                        "on-primary-container": "#798098",
+                        "surface-dim": "#051424",
+                        "surface-bright": "#2c3a4c",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-tertiary": "#3e2d11",
+                        "on-primary": "#283044",
+                        "surface-tint": "#bec6e0",
+                        "primary-container": "#0f172a",
+                        "surface-container-high": "#1c2b3c",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "secondary": "#bcc7de",
+                        "tertiary-container": "#231500",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-surface": "#d4e4fa",
+                        "outline-variant": "#45464d",
+                        "inverse-primary": "#565e74",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "surface-variant": "#273647",
+                        "surface-container-highest": "#273647",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#dae2fd",
+                        "outline": "#909097",
+                        "surface": "#051424",
+                        "on-tertiary-container": "#957d5a",
+                        "primary": "#bec6e0",
+                        "on-secondary-fixed": "#111c2d",
+                        "error": "#ffb4ab",
+                        "surface-container": "#122131",
+                        "tertiary": "#dec29a",
+                        "inverse-on-surface": "#233143",
+                        "tertiary-fixed": "#fcdeb5",
+                        "background": "#051424",
+                        "secondary-fixed": "#d8e3fb",
+                        "inverse-surface": "#d4e4fa",
+                        "on-surface-variant": "#c6c6cd",
+                        "on-secondary-container": "#aeb9d0",
+                        "on-secondary": "#263143",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-background": "#d4e4fa",
+                        "surface-container-low": "#0d1c2d",
+                        "surface-container-lowest": "#010f1f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#3e495d",
+                        "on-primary-fixed": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "label-code": ["JetBrains Mono"],
+                        "headline-xl": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-code": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="antialiased selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav
+            class="fixed top-0 left-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-outline-variant/50 px-margin-desktop py-stack-sm flex justify-between items-center max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+            <div class="flex items-center gap-stack-sm">
+                <img
+                    alt="C. Eduardo Dev Logo"
+                    class="h-8 w-8"
+                    src="assets/img/logo.png"
+                />
+                <span class="text-headline-lg font-headline-lg text-primary tracking-tighter">C.
+                    Eduardo
+                    Carrasco</span>
+            </div>
+            <div class="hidden md:flex items-center gap-gutter">
+                <a
+                    class="text-on-surface-variant font-label-caps hover:text-primary transition-colors duration-200"
+                    href="index.html"
+                >Inicio</a>
+                <a
+                    class="text-on-surface-variant font-label-caps hover:text-primary transition-colors duration-200"
+                    href="perfil.html"
+                >Experiencia</a>
+                <a
+                    class="text-on-surface-variant font-label-caps hover:text-primary transition-colors duration-200"
+                    href="skills.html"
+                >Habilidades</a>
+                <a
+                    class="text-primary border-b-2 border-primary pb-1 font-label-caps"
+                    href="projects.html"
+                >Proyectos</a>
+            </div>
+            <div class="flex items-center gap-stack-md">
+                <button
+                    class="material-symbols-outlined text-primary hover:opacity-80 transition-all p-2 bg-surface-variant/30 rounded-lg"
+                    data-icon="terminal"
+                >terminal</button>
+                <a
+                    class="bg-[#06B6D4] text-white px-6 py-2 rounded-lg font-label-caps hover:opacity-90 active:scale-95 transition-all"
+                    href="contact.html"
+                >Contrata mis servicios</a>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-32 pb-stack-lg px-margin-desktop max-w-container-max mx-auto">
+        <!-- Hero Section -->
+        <section class="mb-20">
+            <div
+                class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1 border border-outline-variant/50 mb-stack-md rounded">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 status-pulse"></span>
+                <span class="text-label-code text-on-surface font-label-code">Status: System
+                    Online</span>
+            </div>
+            <h1 class="text-headline-xl font-headline-xl text-on-surface mb-stack-sm">
+                Archivo de Proyectos<span class="text-primary">.</span>
+            </h1>
+            <p class="text-body-md font-body-md text-on-surface-variant max-w-2xl">
+                Selección de soluciones Tecnológicas que abarcan desde infraestructura core de
+                RR.HH. hasta aplicaciones single-page de alto rendimiento. Cada sistema ha sido
+                desarrollado bajo estrictos estándares de escalabilidad e integridad de datos.
+            </p>
+        </section>
+        <!-- Bento Grid Projects -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            <!-- Project 1: Plataforma Web: Seguros & Protección Integral -->
+            <article
+                class="md:col-span-4 group glass-panel rounded-lg overflow-hidden flex flex-col"
+            >
+                <div class="h-48 relative overflow-hidden">
+                    <img
+                        alt="Plataforma Web: Seguros & Protección Integral"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="Interfaz principal del sitio web AutoSeguro en una laptop, mostrando el banner principal con el eslogan 'Protección completa para tu vehículo' y botones de llamada a la acción."
+                        src="assets/img/seguro_proyecto_cotizaciones.png"
+                        loading="lazy"
+                    />
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span
+                            class="bg-surface-container-highest/80 backdrop-blur px-2 py-1 text-label-code font-label-code text-primary rounded-DEFAULT"
+                        >DESPLEGADO</span>
+                    </div>
+                </div>
+                <div class="p-stack-md flex-grow flex flex-col">
+                    <h3 class="text-headline-lg font-headline-lg text-on-surface mb-stack-sm">
+                        Seguros &amp; Protección Integral <span>Plataforma Web</span>
+                    </h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant mb-stack-md">
+                        Diseño y desarrollo de una plataforma web corporativa para una firma de
+                        corretaje de seguros. El proyecto se centra en una arquitectura de
+                        información limpia, navegación intuitiva y una interfaz moderna diseñada
+                        para transmitir confianza, facilitando la conversión y la consulta de
+                        pólizas.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-stack-lg">
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#AstroJs</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#CSS</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#JavaScript</span>
+                    </div>
+
+                    <a
+                        class="border border-primary text-primary px-4 py-2 font-label-caps rounded-DEFAULT self-start hover:bg-primary/10 transition-all flex items-center gap-2"
+                        href="https://educamo.github.io/seguro/"
+                        target="_blank"
+                    >
+                        VER DEMO <span
+                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Project 2: Estética & Bienestar – Plataforma Web Premium -->
+            <article
+                class="md:col-span-8 group glass-panel rounded-lg overflow-hidden flex flex-col md:flex-row"
+            >
+                <div class="md:w-1/2 relative overflow-hidden">
+                    <img
+                        alt="Estética & Bienestar y Plataforma Web Premium"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                        data-alt="Interfaz de panel de administración en un portátil, que muestra métricas de analítica y gestión de un centro de estética avanzada"
+                        src="assets/img//estetica_proyecto_citas.png"
+                        loading="lazy"
+                    />
+                    <div class="absolute top-4 right-4 flex gap-2">
+                        <span
+                            class="bg-surface-container-highest/80 backdrop-blur px-2 py-1 text-label-code font-label-code text-primary rounded-DEFAULT"
+                        >DESPLEGADO</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-stack-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-stack-sm">
+                            <h3 class="text-headline-lg font-headline-lg text-on-surface">Estética
+                                &amp; Bienestar <span>Plataforma Web Premium </span>
+                            </h3>
+                            <span class="material-symbols-outlined text-outline">cloud_done</span>
+                        </div>
+                        <p class="text-body-sm font-body-sm text-on-surface-variant mb-stack-md">
+                            Diseño y desarrollo de una plataforma web moderna para un centro de
+                            estética y salud. El proyecto destaca por una interfaz fluida, estética
+                            minimalista y una experiencia de usuario optimizada para la conversión,
+                            reflejando la identidad elegante de la marca.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-stack-lg">
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#JavaScript</span>
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#CSS</span>
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#TypeScript</span>
+                        </div>
+                    </div>
+                    <a
+                        class="border border-primary text-primary px-4 py-2 font-label-caps rounded-DEFAULT self-start hover:bg-primary/10 transition-all flex items-center gap-2"
+                        href="https://educamo.github.io/estetica/"
+                        target="_blank"
+                    >
+                        VER DEMO <span
+                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Project 3: API_rrhh -->
+            <article
+                class="md:col-span-8 group glass-panel rounded-lg overflow-hidden flex flex-col md:flex-row"
+            >
+                <div class="md:w-1/2 relative overflow-hidden">
+                    <img
+                        alt="API_rrhh Dashboard"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                        data-alt="A sophisticated data dashboard interface showing complex payroll analytics and HR management metrics. The UI features clean, dark-themed charts with cyan and slate accents, organized in a high-density grid layout. Background reflects a blurred professional office setting with soft technological lighting. The aesthetic is focused on precision and data integrity for a modern enterprise environment."
+                        src="assets/img/api_rrhh_dashboard_Sistema_nominas.png  "
+                        loading="lazy"
+                    />
+                </div>
+                <div class="md:w-1/2 p-stack-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-stack-sm">
+                            <h3 class="text-headline-lg font-headline-lg text-on-surface">API_rrhh
+                            </h3>
+                            <span class="material-symbols-outlined text-outline">database</span>
+                        </div>
+                        <p class="text-body-sm font-body-sm text-on-surface-variant mb-stack-md">
+                            Sistema completo de nómina y gestión de RR. HH. centrado en la
+                            generación de informes dinámicos y la estricta integridad de los datos.
+                            Desarrollado para manejar cálculos fiscales complejos con máxima
+                            fiabilidad.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-stack-lg">
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#CodeIgniter3</span>
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#Vue3</span>
+                            <span
+                                class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                            >#TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Project 4: SPAs -->
+            <article
+                class="md:col-span-4 group glass-panel rounded-lg overflow-hidden flex flex-col"
+            >
+                <div class="h-48 relative overflow-hidden">
+                    <img
+                        alt="SPA Portfolio"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="A collage of high-performance web applications with fluid animations and ultra-responsive layouts. The visual style uses glassmorphic elements and glowing neon borders in cyan. The setting is a minimalist digital workspace that feels airy and futuristic. The lighting is soft and diffused, emphasizing the sleek, technical nature of modern front-end development at WODEVA."
+                        src="assets/img/spa_WODEVA.png"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="p-stack-md flex-grow flex flex-col">
+                    <h3 class="text-headline-lg font-headline-lg text-on-surface mb-stack-sm">SPAs
+                        High Performance</h3>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant mb-stack-md">
+                        WebSite Single Page Applications de alto rendimiento creadas para WODEVA,
+                        enfocada en la optimización de Core Web Vitals y en ofrecer una experiencia
+                        de usuario excepcional y sin interrupciones.
+                    </p>
+                    <div class="mt-auto flex flex-wrap gap-2">
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#Vue3</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#Vite</span>
+                    </div>
+                </div>
+            </article>
+            <!-- Project 5: Skyflot -->
+            <article
+                class="md:col-span-12 group glass-panel rounded-lg overflow-hidden flex flex-col md:flex-row-reverse"
+            >
+                <div class="md:w-3/5 relative overflow-hidden bg-surface-container-high">
+                    <img
+                        alt="Skyflot Modernization"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100"
+                        data-alt="A wide-angle conceptual shot of a modern airport control center with glowing digital screens and flight tracking data. The color palette is dominated by deep blues and greys, with vibrant cyan highlights for active flight paths. The scene conveys a sense of high-stakes precision and critical infrastructure modernization. The lighting is low and focused, creating a high-tech, authoritative atmosphere."
+                        src="assets/img/skyflot_system_develop.png"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-surface to-transparent md:block hidden">
+                    </div>
+                </div>
+                <div class="md:w-2/5 p-stack-lg flex flex-col justify-center">
+                    <div class="mb-stack-md">
+                        <span
+                            class="text-primary font-label-code text-label-code uppercase tracking-widest"
+                        >INFRAESTRUCTURA CRITICA</span>
+                        <h3 class="text-headline-xl font-headline-xl text-on-surface mt-2">Skyflot
+                            Sistema de operaciones Aeroportuarias</h3>
+                    </div>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg">
+                        Refactorización y modernización del core de los sistemas para operaciones
+                        aeroportuarias. Enfoque en flujos de datos de baja latencia, sincronización
+                        de terminales e integración de sistemas legacy para una confiabilidad de
+                        misión crítica.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-stack-lg">
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#CodeIgniter2</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#JQuery</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#Bootstrap</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#MySQL</span>
+                        <span
+                            class="bg-surface-variant px-2 py-1 rounded-DEFAULT text-label-code font-label-code text-on-surface"
+                        >#Soporte IT</span>
+                    </div>
+                    <!-- TODO: PENSAR QUE SE PUEDE AGREGAR A ESTE BOTÓN -->
+                    <!-- <div class="flex gap-4">
+                        <button
+                            class="bg-primary text-on-primary px-6 py-3 font-label-caps rounded-DEFAULT hover:opacity-90 transition-all"
+                        >EXPLORE CASE STUDY</button>
+                    </div> -->
+                </div>
+            </article>
+        </div>
+        <!-- Technical Stats Section -->
+        <section
+            class="mt-24 grid grid-cols-2 md:grid-cols-6 gap-gutter border-t border-outline-variant/30 pt-12"
+        >
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">UPTIME</span>
+                <span class="text-headline-lg font-headline-lg">99.9%</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">PROYECTOS</span>
+                <span class="text-headline-lg font-headline-lg">+24</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">COMMITS</span>
+                <span class="text-headline-lg font-headline-lg">1.2k</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">INTEGRIDAD DE
+                    DATOS</span>
+                <span class="text-headline-lg font-headline-lg">100%</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">SOPORTE IT &amp;
+                    REDES</span>
+                <span class="text-headline-lg font-headline-lg">+2000hs</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-primary font-label-code text-label-caps">APIs DESARROLLADAS</span>
+                <span class="text-headline-lg font-headline-lg">+10</span>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-lowest border-t border-outline-variant/30 mt-24"
+    >
+        <div class="text-label-caps font-label-caps text-on-surface-variant"> © <span
+                id="footer-year"
+            ></span> C. Eduardo Carrasco. Todos los Derechos reservados.</div>
+        <div class="flex gap-stack-md">
+            <a
+                class="text-on-surface-variant hover:text-primary transition-all font-label-code"
+                href="https://www.linkedin.com/in/educamo/"
+                target="_blank"
+            >LinkedIn</a>
+            <a
+                class="text-on-surface-variant hover:text-primary transition-all font-label-code"
+                href="https://github.com/educamo"
+                target="_blank"
+            >GitHub</a>
+            <a
+                class="text-on-surface-variant hover:text-primary transition-all font-label-code"
+                href="https://github.com/educamo/educamo.github.io"
+                target="_blank"
+            >Source Code</a>
+        </div>
+    </footer>
+    <!-- Terminal Micro-interaction Overlay (Hidden by default) -->
+    <div
+        class="fixed inset-0 bg-background/90 z-[60] flex items-center justify-center hidden p-margin-mobile"
+        id="terminal-overlay"
+    >
+        <div class="w-full max-w-3xl glass-card rounded-xl overflow-hidden">
+            <div
+                class="bg-surface-container-high px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-error"></div>
+                    <div class="w-3 h-3 rounded-full bg-tertiary"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#10b981]"></div>
+                    <span
+                        class="text-label-code text-on-surface-variant ml-2">guest@eduardocarrasco-dev.sys:~</span>
+                </div>
+                <button
+                    class="text-on-surface-variant hover:text-error"
+                    onclick="toggleTerminal()"
+                >
+                    <span
+                        class="material-symbols-outlined"
+                        data-icon="close"
+                    >close</span>
+                </button>
+            </div>
+            <div class="p-stack-md h-96 font-label-code text-sm overflow-y-auto space-y-2">
+                <p class="text-[#06B6D4]">&gt; Initializing sys_core_v4.0.sh...</p>
+                <p class="text-on-surface-variant">System: Linux 5.15.0-generic x86_64</p>
+                <p class="text-on-surface-variant">Experience: 10.2 years detected.</p>
+                <p class="text-on-surface-variant">Active modules: LAMP, Vue3, TypeScript, Cisco-IOS
+                </p>
+                <div class="flex gap-2">
+                    <span class="text-[#10b981]">$</span>
+                    <input
+                        autofocus=""
+                        class="bg-transparent border-none focus:ring-0 p-0 text-on-surface w-full"
+                        id="terminal-input"
+                        placeholder="Type 'help' for available commands..."
+                        type="text"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Layer: Matrix-like background effect for atmosphere -->
+    <canvas
+        class="fixed inset-0 -z-10 opacity-5 pointer-events-none"
+        id="matrix-bg"
+    ></canvas>
+    <script>
+        // Atmospheric interaction: Subtle grid/matrix effect
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        const resize = () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', resize);
+        resize();
+
+        const dots = [];
+        for (let i = 0; i < 100; i++) {
+            dots.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#bec6e0';
+            dots.forEach(dot => {
+                dot.x += dot.vx;
+                dot.y += dot.vy;
+                if (dot.x < 0 || dot.x > width) dot.vx *= -1;
+                if (dot.y < 0 || dot.y > height) dot.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, 1, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/terminal.js"></script>
+</body>
+
+</html>
